@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Container, Row, Col} from 'react-bootstrap';
 import Sidebar from './Sidebar';
 import  Actions from './Actions';
+import Unit from './Unit';
 
 /* Main Component */
 class Main extends Component {
@@ -13,8 +14,10 @@ class Main extends Component {
             point: null,
             users: [],
             staff: [],
+            unit: {}
         };
-        this.clickPoint = this.clickPoint.bind(this)
+        this.clickPoint = this.clickPoint.bind(this);
+        this.clickUnit = this.clickUnit.bind(this);
     }
 
     componentDidMount() {
@@ -32,15 +35,19 @@ class Main extends Component {
             })
     }
 
+    clickUnit(value){
+        this.setState({ unit: value });
+    }
+
     renderPage() {
         return (
             <Container fluid={true}>
                 <Row>
                     <Col md={8} className="work-column">
-                        <h1>Render 1</h1>
+                        <Unit unit={this.state.unit}/>
                     </Col>
                     <Col md={2} className="actions-column">
-                        <Actions staff = {this.state.staff}/>
+                        <Actions staff = {this.state.staff} clickUnit = {this.clickUnit}/>
                     </Col>
                     <Col md={2} className="sidebar-column">
                         <Sidebar clickPoint = {this.clickPoint}/>
