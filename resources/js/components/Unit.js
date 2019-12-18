@@ -17,6 +17,19 @@ class Unit extends Component {
         //
     }
 
+    renderActionButtons() {
+        return (
+            <Row className="justify-content-md-between">
+                <Col md={6}>
+                    <p>fgrtgwrthwrth rwth wrt</p>
+                </Col>
+                <Col md={6}>
+                    <p>fgrtgwrthwrth rwth wrt</p>
+                </Col>
+            </Row>
+        );
+    }
+
     renderUnit() {
         return (
             <Row>
@@ -31,6 +44,7 @@ class Unit extends Component {
         return (
             <div>
                 <Container fluid={true}>
+                    {this.renderActionButtons()}
                     {this.renderUnit()}
                 </Container>
             </div>

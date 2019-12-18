@@ -3,10 +3,10 @@
 html,
 body,
 main {
-  height: 100vh;
+  height: 105vh;
   max-height: 100%;
-  background: -webkit-gradient(linear, left top, right bottom, from(#000), to(#222222));
-  background: linear-gradient(to bottom right, #000, #222222);
+  background: -webkit-gradient(linear, left top, right bottom, from(#191d20), to(#1d2126));
+  background: linear-gradient(to bottom right, #191d20, #1d2126);
   color: #bdbdbd;
   max-width: 100%;
 }
@@ -26,9 +26,23 @@ p {
 
 .sidebar-column,
 .actions-column {
-  height: 95vh;
+  height: 105vh;
   max-height: 100%;
-  border-left: 1px solid #444444;
+  padding-top: 20px;
+}
+
+.sidebar-column {
+  background: -webkit-gradient(linear, left top, right bottom, from(#25272a), to(#212325));
+  background: linear-gradient(to bottom right, #25272a, #212325);
+}
+
+.actions-column {
+  opacity: 0.1;
+  background: #000;
+}
+
+.work-column {
+  border-left: 1px solid #0374a4;
 }
 
 .sidebar-point {

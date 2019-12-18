@@ -81852,10 +81852,10 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Container"], {
         fluid: true
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], {
-        md: 8,
-        className: "work-column"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Unit__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        unit: this.state.unit
+        md: 2,
+        className: "sidebar-column"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        clickPoint: this.clickPoint
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], {
         md: 2,
         className: "actions-column"
@@ -81863,10 +81863,10 @@ function (_Component) {
         staff: this.state.staff,
         clickUnit: this.clickUnit
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], {
-        md: 2,
-        className: "sidebar-column"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        clickPoint: this.clickPoint
+        md: 8,
+        className: "work-column"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Unit__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        unit: this.state.unit
       }))));
     }
   }, {
@@ -82055,6 +82055,17 @@ function (_Component) {
     value: function componentDidMount() {//
     }
   }, {
+    key: "renderActionButtons",
+    value: function renderActionButtons() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], {
+        className: "justify-content-md-between"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], {
+        md: 6
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "fgrtgwrthwrth rwth wrt")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], {
+        md: 6
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "fgrtgwrthwrth rwth wrt")));
+    }
+  }, {
     key: "renderUnit",
     value: function renderUnit() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], {
@@ -82066,7 +82077,7 @@ function (_Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Container"], {
         fluid: true
-      }, this.renderUnit()));
+      }, this.renderActionButtons(), this.renderUnit()));
     }
   }]);
 
@@ -82097,8 +82108,8 @@ function (_Component) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/developer/projects/adminka/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/developer/projects/adminka/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/konstantin/projects/adminka/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/konstantin/projects/adminka/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

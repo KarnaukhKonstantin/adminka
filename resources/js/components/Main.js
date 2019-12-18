@@ -43,14 +43,14 @@ class Main extends Component {
         return (
             <Container fluid={true}>
                 <Row>
-                    <Col md={8} className="work-column">
-                        <Unit unit={this.state.unit}/>
+                    <Col md={2} className="sidebar-column">
+                        <Sidebar clickPoint = {this.clickPoint}/>
                     </Col>
                     <Col md={2} className="actions-column">
                         <Actions staff = {this.state.staff} clickUnit = {this.clickUnit}/>
                     </Col>
-                    <Col md={2} className="sidebar-column">
-                        <Sidebar clickPoint = {this.clickPoint}/>
+                    <Col md={8} className="work-column">
+                        <Unit unit={this.state.unit}/>
                     </Col>
                 </Row>
             </Container>
