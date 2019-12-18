@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import { Container, Row, Col} from 'react-bootstrap';
+import { Container, Row, Col, ButtonToolbar, Button} from 'react-bootstrap';
 
 /* Actions Component */
 class Actions extends Component {
@@ -20,11 +20,21 @@ class Actions extends Component {
         return this.props.staff.map((unit, i) => {
             return (
                 <Row>
-                    <Col md={12} className="sidebar-point"
+                    <Col md={6} className="sidebar-point"
                          onClick={
                              () => { this.props.clickUnit(unit)}}
                          key={i} >
                         <p>{unit.name}</p>
+                    </Col>
+                    <Col md={2}>
+                        <ButtonToolbar>
+                            <Button variant="outline-primary" size="sm">Edit</Button>
+                        </ButtonToolbar>
+                    </Col>
+                    <Col md={2}>
+                        <ButtonToolbar>
+                            <Button variant="outline-danger" size="sm">Delete</Button>
+                        </ButtonToolbar>
                     </Col>
                 </Row>
             );

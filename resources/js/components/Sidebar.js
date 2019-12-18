@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import { Container, Row, Col} from 'react-bootstrap';
+import { Container, Row, Col, ButtonToolbar, Button} from 'react-bootstrap';
 
 /* Sidebar Component */
 class Sidebar extends Component {
@@ -20,12 +20,18 @@ class Sidebar extends Component {
     renderSidebar() {
         return this.state.points.map((point, i) => {
             return (
-                    <Row>
-                        <Col md={12} className="sidebar-point"
+                    <Row className="justify-content-md-center">
+                        <Col md={9}
+                             className = "sidebar-point"
                              onClick={
                             () => { this.props.clickPoint(point.toLowerCase())}}
                              key={i} >
                             <p>{point}</p>
+                        </Col>
+                        <Col md={3}>
+                            <ButtonToolbar>
+                                <Button variant="outline-primary" size="sm">+</Button>
+                            </ButtonToolbar>
                         </Col>
                     </Row>
             );

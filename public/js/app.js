@@ -81673,13 +81673,23 @@ function (_Component) {
 
       return this.props.staff.map(function (unit, i) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], {
-          md: 12,
+          md: 6,
           className: "sidebar-point",
           onClick: function onClick() {
             _this2.props.clickUnit(unit);
           },
           key: i
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, unit.name)));
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, unit.name)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], {
+          md: 2
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ButtonToolbar"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+          variant: "outline-primary",
+          size: "sm"
+        }, "Edit"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], {
+          md: 2
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ButtonToolbar"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+          variant: "outline-danger",
+          size: "sm"
+        }, "Delete"))));
       });
     }
   }, {
@@ -81946,14 +81956,21 @@ function (_Component) {
       var _this2 = this;
 
       return this.state.points.map(function (point, i) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], {
-          md: 12,
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], {
+          className: "justify-content-md-center"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], {
+          md: 9,
           className: "sidebar-point",
           onClick: function onClick() {
             _this2.props.clickPoint(point.toLowerCase());
           },
           key: i
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, point)));
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, point)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], {
+          md: 3
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ButtonToolbar"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+          variant: "outline-primary",
+          size: "sm"
+        }, "+"))));
       });
     }
   }, {
