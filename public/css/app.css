@@ -7,7 +7,7 @@ main {
   max-height: 100%;
   background: -webkit-gradient(linear, left top, right bottom, from(#191d20), to(#1d2126));
   background: linear-gradient(to bottom right, #191d20, #1d2126);
-  color: #bdbdbd;
+  color: #fff;
   max-width: 100%;
 }
 
@@ -17,7 +17,19 @@ navbar-brand {
 }
 
 p {
+  color: #fff;
+  font-weight: lighter;
+}
+
+span {
   color: #bdbdbd;
+  font-weight: lighter;
+}
+
+input {
+  background: none !important;
+  border: 1px solid #0374a4 !important;
+  color: #0374a4 !important;
 }
 
 .bg-black {
@@ -37,12 +49,15 @@ p {
 }
 
 .actions-column {
-  opacity: 0.1;
-  background: #000;
+  background: rgba(0, 0, 0, 0.1);
 }
 
 .work-column {
   border-left: 1px solid #0374a4;
+}
+
+.sidebar {
+  padding-top: 50%;
 }
 
 .sidebar-point {
@@ -73,6 +88,51 @@ p {
   background: #bdbdbd;
   -webkit-transform: scale(1);
           transform: scale(1);
+}
+
+.sidebar-point p,
+i {
+  color: #fff !important;
+}
+
+.logo {
+  max-width: 100%;
+}
+
+.unit-block {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  font-weight: bolder;
+  margin-top: 30%;
+}
+
+.card {
+  background: none !important;
+  border-top: 1px solid #0374a4 !important;
+  border-bottom: none !important;
+  border-left: none !important;
+  border-right: none !important;
+}
+
+.card-header {
+  background-color: rgba(0, 0, 0, 0.01) !important;
+  text-align: right;
+}
+
+.card-header i {
+  color: #0374a4 !important;
+}
+
+.accordion-block {
+  width: 1000px;
+  max-width: 1000px;
 }
 
 /*!

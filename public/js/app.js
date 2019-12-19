@@ -81667,29 +81667,48 @@ function (_Component) {
     value: function componentDidMount() {//
     }
   }, {
-    key: "renderActionsComponent",
-    value: function renderActionsComponent() {
+    key: "renderActionButtons",
+    value: function renderActionButtons() {
       var _this2 = this;
 
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], {
+        className: "actionPoint"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], {
+        md: 6,
+        className: "text-right"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ButtonToolbar"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+        variant: "outline-success",
+        size: "sm",
+        onClick: function onClick() {
+          _this2.props.createEntity('Add' + _this2.props.point);
+        }
+      }, "Add ", this.props.point))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], {
+        md: 6,
+        className: "text-right"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Group, {
+        controlId: "formBasicPassword"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Control, {
+        type: "text",
+        size: "sm",
+        placeholder: "Search"
+      })))));
+    }
+  }, {
+    key: "renderActionsComponent",
+    value: function renderActionsComponent() {
+      var _this3 = this;
+
       return this.props.staff.map(function (unit, i) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], {
-          md: 6,
-          className: "sidebar-point",
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], {
+          className: "actionPoint"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], {
+          md: 12,
+          className: "sidebar-point text-right",
           onClick: function onClick() {
-            _this2.props.clickUnit(unit);
+            _this3.props.clickUnit(unit);
           },
           key: i
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, unit.name)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], {
-          md: 2
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ButtonToolbar"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
-          variant: "outline-primary",
-          size: "sm"
-        }, "Edit"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], {
-          md: 2
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ButtonToolbar"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
-          variant: "outline-danger",
-          size: "sm"
-        }, "Delete"))));
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, unit.name)));
       });
     }
   }, {
@@ -81701,7 +81720,7 @@ function (_Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Container"], {
         fluid: true
-      }, this.renderActionsComponent()));
+      }, this.renderActionButtons(), this.renderActionsComponent()));
     }
   }]);
 
@@ -81771,6 +81790,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Sidebar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Sidebar */ "./resources/js/components/Sidebar.js");
 /* harmony import */ var _Actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Actions */ "./resources/js/components/Actions.js");
 /* harmony import */ var _Unit__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Unit */ "./resources/js/components/Unit.js");
+/* harmony import */ var _Users_CreateUser__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Users/CreateUser */ "./resources/js/components/Users/CreateUser.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -81795,6 +81815,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 /* Main Component */
 
 var Main =
@@ -81812,10 +81833,12 @@ function (_Component) {
       point: null,
       users: [],
       staff: [],
-      unit: {}
+      unit: {},
+      type: ''
     };
     _this.clickPoint = _this.clickPoint.bind(_assertThisInitialized(_this));
     _this.clickUnit = _this.clickUnit.bind(_assertThisInitialized(_this));
+    _this.createEntity = _this.createEntity.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -81847,8 +81870,14 @@ function (_Component) {
       });
     }
   }, {
+    key: "createEntity",
+    value: function createEntity(type) {
+      console.log(type);
+    }
+  }, {
     key: "renderPage",
     value: function renderPage() {
+      console.log(this.state.point);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Container"], {
         fluid: true
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], {
@@ -81861,13 +81890,13 @@ function (_Component) {
         className: "actions-column"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Actions__WEBPACK_IMPORTED_MODULE_4__["default"], {
         staff: this.state.staff,
-        clickUnit: this.clickUnit
+        point: this.state.point,
+        clickUnit: this.clickUnit,
+        createEntity: this.createEntity
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], {
         md: 8,
         className: "work-column"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Unit__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        unit: this.state.unit
-      }))));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Users_CreateUser__WEBPACK_IMPORTED_MODULE_6__["default"], null))));
     }
   }, {
     key: "renderProducts",
@@ -81951,6 +81980,18 @@ function (_Component) {
     value: function componentDidMount() {//
     }
   }, {
+    key: "renderAuthUser",
+    value: function renderAuthUser() {}
+  }, {
+    key: "renderLogo",
+    value: function renderLogo() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], {
+        className: "justify-content-center"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], {
+        md: 6
+      }));
+    }
+  }, {
     key: "renderSidebar",
     value: function renderSidebar() {
       var _this2 = this;
@@ -81959,18 +82000,15 @@ function (_Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], {
           className: "justify-content-md-center"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], {
-          md: 9,
+          md: 12,
           className: "sidebar-point",
           onClick: function onClick() {
             _this2.props.clickPoint(point.toLowerCase());
           },
           key: i
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, point)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], {
-          md: 3
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ButtonToolbar"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
-          variant: "outline-primary",
-          size: "sm"
-        }, "+"))));
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          className: "fa fa-home fa-2x mx-2"
+        }), point)));
       });
     }
   }, {
@@ -81981,8 +82019,9 @@ function (_Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Container"], {
-        fluid: true
-      }, this.renderSidebar()));
+        fluid: true,
+        className: "sidebar"
+      }, this.renderLogo(), this.renderSidebar()));
     }
   }]);
 
@@ -82061,9 +82100,15 @@ function (_Component) {
         className: "justify-content-md-between"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], {
         md: 6
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "fgrtgwrthwrth rwth wrt")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ButtonToolbar"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+        variant: "outline-primary",
+        className: "unit-button px-5"
+      }, "Edit"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], {
         md: 6
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "fgrtgwrthwrth rwth wrt")));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ButtonToolbar"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+        variant: "outline-danger",
+        className: "unit-button px-5"
+      }, "Delete"))));
     }
   }, {
     key: "renderUnit",
@@ -82073,11 +82118,41 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.unit.name)));
     }
   }, {
+    key: "renderDetails",
+    value: function renderDetails() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], {
+        className: "justify-content-md-center mt-5"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], {
+        md: 12
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Accordion"], {
+        className: "accordion-block"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Card"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Accordion"].Toggle, {
+        as: react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Card"].Header,
+        eventKey: "0"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], {
+        className: "justify-content-md-between"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Info"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-chevron-down"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Accordion"].Collapse, {
+        eventKey: "0"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Card"].Body, null, "Hello! I'm the body"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Card"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Accordion"].Toggle, {
+        as: react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Card"].Header,
+        eventKey: "1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], {
+        className: "justify-content-md-between"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Details"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-chevron-down"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Accordion"].Collapse, {
+        eventKey: "1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Card"].Body, null, "Hello! I'm another body"))))));
+    }
+  }, {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Container"], {
-        fluid: true
-      }, this.renderActionButtons(), this.renderUnit()));
+        fluid: true,
+        className: "unit-block"
+      }, this.renderUnit(), this.renderActionButtons(), this.renderDetails()));
     }
   }]);
 
@@ -82085,6 +82160,101 @@ function (_Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (Unit); // if (document.getElementById('root')) {
+//     ReactDOM.render(<Main/>, document.getElementById('root'));
+// }
+
+/***/ }),
+
+/***/ "./resources/js/components/Users/CreateUser.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/Users/CreateUser.js ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+/* CreateUser Component */
+
+var CreateUser =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(CreateUser, _Component);
+
+  function CreateUser(props) {
+    var _this;
+
+    _classCallCheck(this, CreateUser);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(CreateUser).call(this, props));
+    _this.state = {
+      users: [],
+      unit: {}
+    };
+    return _this;
+  }
+
+  _createClass(CreateUser, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {//
+    }
+  }, {
+    key: "renderCreateUser",
+    value: function renderCreateUser() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], {
+        className: "justify-content-md-between"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], {
+        md: 12
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Check User Create Component")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], {
+        md: 12
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "create-user-card"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "create-user-header"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "header")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "create-user-body"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "body")))));
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Container"], {
+        fluid: true,
+        className: "unit-block"
+      }, this.renderCreateUser()));
+    }
+  }]);
+
+  return CreateUser;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (CreateUser); // if (document.getElementById('root')) {
 //     ReactDOM.render(<Main/>, document.getElementById('root'));
 // }
 
@@ -82108,8 +82278,8 @@ function (_Component) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/konstantin/projects/adminka/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/konstantin/projects/adminka/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/developer/projects/adminka/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/developer/projects/adminka/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

@@ -17,21 +17,30 @@ class Sidebar extends Component {
         //
     }
 
+    renderAuthUser() {
+
+    }
+
+    renderLogo() {
+        return(
+            <Row className="justify-content-center">
+                <Col md={6}>
+
+                </Col>
+            </Row>
+        );
+    }
+
     renderSidebar() {
         return this.state.points.map((point, i) => {
             return (
                     <Row className="justify-content-md-center">
-                        <Col md={9}
+                        <Col md={12}
                              className = "sidebar-point"
                              onClick={
                             () => { this.props.clickPoint(point.toLowerCase())}}
                              key={i} >
-                            <p>{point}</p>
-                        </Col>
-                        <Col md={3}>
-                            <ButtonToolbar>
-                                <Button variant="outline-primary" size="sm">+</Button>
-                            </ButtonToolbar>
+                            <p><i className="fa fa-home fa-2x mx-2"></i>{point}</p>
                         </Col>
                     </Row>
             );
@@ -45,7 +54,8 @@ class Sidebar extends Component {
     render() {
         return (
             <div>
-                <Container fluid={true}>
+                <Container fluid={true} className="sidebar">
+                    {this.renderLogo()}
                     {this.renderSidebar()}
                 </Container>
             </div>
